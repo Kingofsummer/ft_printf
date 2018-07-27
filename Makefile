@@ -4,8 +4,7 @@ CFLAGS = -O0
 
 OBJECTS = $(SRC:.c=.o)
 
-SRC = main.c \
-		ft_printf.c \
+SRC =	ft_printf.c \
 		ft_make_zero_struct.c \
 		ft_pars_all.c \
 		ft_parse_length.c \
