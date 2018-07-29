@@ -23,12 +23,12 @@ int ft_count_bytes(wchar_t i)
 }
 void     ft_put_wchar(wchar_t c, int len_bytes, t_struct * list)
 {
-    if (len_bytes == 1)
+    if (len_bytes == 1 || MB_CUR_MAX  == 1)
     {
         ft_putchar(c);
         list->i++;
     }
-    else if (len_bytes == 2)
+    else if (len_bytes == 2 )
     {
         ft_putchar((c >> 6) | 0xC0);
         ft_putchar((c & 0x3F) | 0x80);
