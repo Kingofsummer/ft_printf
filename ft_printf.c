@@ -23,6 +23,7 @@ int ft_printf( const char *format, ... )
 		
 	//  printf("2list->type %c\n", list->type);
 		ft_processing(arg, list, &format);
+		list->width = 0;
 	}
 
 	//printf("adadasa%d", list->i);
