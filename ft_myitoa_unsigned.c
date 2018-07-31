@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-static int	length(uintmax_t value, uintmax_t base)
+static size_t	length(uintmax_t value, uintmax_t base)
 {
 	int	i;
 
@@ -25,13 +25,12 @@ static int	length(uintmax_t value, uintmax_t base)
 	return (i + 1);
 }
 
-char		*ft_myitoa_unsigned(uintmax_t value, uintmax_t base)
+char			*ft_myitoa_unsigned(uintmax_t value, uintmax_t base)
 {
 	char	*nbr;
 	int		l;
 
-	l = 0;
-	l += length(value, base);
+	l = length(value, base);
 	if (!(nbr = (char*)(malloc(sizeof(nbr) * (l)))))
 		return (NULL);
 	nbr[l] = '\0';

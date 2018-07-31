@@ -28,7 +28,9 @@ char			*ft_myitoax(uintmax_t value, uintmax_t base)
 	char		*str;
 
 	i = 0;
-	if (base < 2 || base > 16 || !(str = (char*)malloc(32)))
+	if (!(str = (char*)malloc(32)))
+		return (NULL);
+	if (base > 16 || base < 2)
 		return (0);
 	f1(value, base, str, &i);
 	str[i] = '\0';

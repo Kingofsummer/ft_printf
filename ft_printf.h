@@ -61,7 +61,7 @@ const char		*ft_parse_length(const char **format, t_struct *list);
 void			ft_parse_ll_hh(const char **format, t_struct *list);
 void			ft_parse_l_h(const char **format, t_struct *list);
 void			ft_parse_j_z(const char **format, t_struct *list);
-const			char *ft_parse_type(const char **format, t_struct *list);
+const char		*ft_parse_type(const char **format, t_struct *list);
 void			ft_processing(va_list arg, t_struct *list);
 void			ft_process_d (va_list arg, t_struct *list);
 intmax_t		ft_cast_d(t_struct *list, va_list arg);
