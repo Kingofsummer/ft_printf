@@ -1,30 +1,40 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_parse_length.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: afedoren <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/07/29 14:28:21 by afedoren          #+#    #+#             */
+/*   Updated: 2018/07/29 14:28:23 by afedoren         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-const char *ft_parse_length(const char **format , t_struct *list)
+const char	*ft_parse_length(const char **format, t_struct *list)
 {
-	
 	ft_parse_ll_hh(format, list);
-	
 	ft_parse_l_h(format, list);
-
 	ft_parse_j_z(format, list);
 	return (*format);
 }
 
-void ft_parse_ll_hh(const char **format, t_struct *list)
+void		ft_parse_ll_hh(const char **format, t_struct *list)
 {
-	if (**format == 'l' && *(*format + 1) == 'l' )
+	if (**format == 'l' && *(*format + 1) == 'l')
 	{
 		list->len_size = ll;
 		*format = (*format + 2);
 	}
-	else if (**format == 'h' && *(*format + 1) == 'h' )
+	else if (**format == 'h' && *(*format + 1) == 'h')
 	{
 		list->len_size = hh;
 		*format = (*format + 2);
 	}
-} 
-void ft_parse_l_h(const char **format, t_struct *list)
+}
+
+void		ft_parse_l_h(const char **format, t_struct *list)
 {
 	if (**format == 'l')
 	{
@@ -36,8 +46,9 @@ void ft_parse_l_h(const char **format, t_struct *list)
 		list->len_size = h;
 		*format = (*format + 1);
 	}
-} 
-void ft_parse_j_z(const char **format, t_struct *list)
+}
+
+void		ft_parse_j_z(const char **format, t_struct *list)
 {
 	if (**format == 'j')
 	{
@@ -49,5 +60,4 @@ void ft_parse_j_z(const char **format, t_struct *list)
 		list->len_size = z;
 		*format = (*format + 1);
 	}
-
 }

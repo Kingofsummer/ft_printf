@@ -1,9 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_wcharlen.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: afedoren <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/07/29 14:33:41 by afedoren          #+#    #+#             */
+/*   Updated: 2018/07/29 14:33:43 by afedoren         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
-int ft_wcharlen(wchar_t *num)
+
+int		ft_wcharlen(wchar_t *num)
 {
-	int i;
+	int		i;
+
 	i = 0;
-	while(num[i])
+	while (num[i])
 		i++;
-	return(i);
+	return (i);
 }

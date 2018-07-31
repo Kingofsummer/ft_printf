@@ -1,12 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_myputstr.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: afedoren <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/07/29 14:38:30 by afedoren          #+#    #+#             */
+/*   Updated: 2018/07/29 14:38:32 by afedoren         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-void ft_myputstr(char *str, int i, t_struct *list)
+void	ft_myputstr(char *str, int i, t_struct *list)
 {
-	//printf("i===%d", list->i);
 	while (i-- > 0)
 	{
 		write(1, str, 1);
-		 list->i++;
+		list->i++;
 		str++;
 	}
 }

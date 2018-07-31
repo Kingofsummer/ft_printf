@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_myputchar.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: afedoren <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/07/29 14:38:13 by afedoren          #+#    #+#             */
+/*   Updated: 2018/07/29 14:38:15 by afedoren         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-void ft_myputchar(int i, char c, t_struct *list)
+void	ft_myputchar(int i, char c, t_struct *list)
 {
 	while (i > 0)
 	{

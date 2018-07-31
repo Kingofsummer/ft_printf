@@ -4,7 +4,7 @@ CFLAGS = -O0
 
 OBJECTS = $(SRC:.c=.o)
 
-SRC =	ft_printf.c \
+SRC = 	ft_printf.c \
 		ft_make_zero_struct.c \
 		ft_pars_all.c \
 		ft_parse_length.c \
@@ -27,7 +27,7 @@ SRC =	ft_printf.c \
 		ft_strdup.c \
 		ft_process_o.c \
 		ft_process_per.c \
-		ft_my_itoa_baseX.c \
+		ft_myitoax.c \
 		ft_process_xx.c \
 		ft_process_p.c \
 		ft_myitoa_unsigned.c \
@@ -38,11 +38,13 @@ SRC =	ft_printf.c \
 		ft_process_ss.c \
 		ft_wcharlen.c \
 		ft_letter.c \
+		ft_helper.c \
+		ft_helper1.c \
 
 all : $(NAME)
 
 $(NAME) :
-		gcc -c $(CFLAGS) $(SRC)
+		gcc -c  $(CFLAGS) $(SRC)
 		ar -cru $(NAME) $(OBJECTS)
 clean :
 		rm -rf $(OBJECTS)

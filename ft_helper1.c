@@ -1,41 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_process_c.c                                     :+:      :+:    :+:   */
+/*   ft_helper1.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afedoren <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/29 14:29:07 by afedoren          #+#    #+#             */
-/*   Updated: 2018/07/29 14:29:08 by afedoren         ###   ########.fr       */
+/*   Created: 2018/07/30 15:36:22 by afedoren          #+#    #+#             */
+/*   Updated: 2018/07/30 15:36:23 by afedoren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_process_c(va_list arg, t_struct *list)
+int			ft_len_num(size_t numb, int base)
 {
-	char	c;
-	char	chr;
-	int		width;
+	int		i;
 
-	width = list->width;
-	c = (unsigned long)va_arg(arg, long);
-	if (list->zero && list->width)
-		chr = '0';
-	else
-		chr = ' ';
-	if (list->minus)
+	i = 1;
+	if (base == 0)
+		return (0);
+	while (numb / base)
 	{
-		write(1, &c, 1);
-		while (width-- > 1)
-			write(1, &chr, 1);
+		i++;
+		numb /= base;
 	}
-	if (list->minus == 0)
+	return (i);
+}
+
+int			ft_len_num_minus(ssize_t numb, int base)
+{
+	int		i;
+
+	i = 1;
+	if (base == 0)
+		return (0);
+	if (numb < 0)
+		i++;
+	while (numb / base)
 	{
-		while (width-- > 1)
-			write(1, &chr, 1);
-		write(1, &c, 1);
+		i++;
+		numb /= base;
 	}
-	(list->i) = (list->width > 0) ? (list->i + list->width) :
-	(list->i + 1);
+	return (i);
 }
